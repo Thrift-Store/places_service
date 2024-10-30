@@ -1,7 +1,8 @@
 library places_service;
 
 import 'package:geolocator/geolocator.dart';
-import 'package:google_maps_webservice_ex/places.dart';
+import 'package:flutter_google_maps_webservices/places.dart';
+import 'package:tuple/tuple.dart';
 import 'package:uuid/uuid.dart';
 
 import 'models/application_models.dart';
@@ -101,13 +102,13 @@ class PlacesService {
     var currentPosition;
     try {
       for (var trial in [
-        (LocationAccuracy.lowest, 2),
-        (LocationAccuracy.medium, 2),
-        (LocationAccuracy.high, 3)
+        Tuple2(LocationAccuracy.lowest, 2),
+        Tuple2(LocationAccuracy.medium, 2),
+        Tuple2(LocationAccuracy.high, 3)
       ]) {
         currentPosition = await Geolocator.getCurrentPosition(
-          desiredAccuracy: trial.$1,
-          timeLimit: Duration(seconds: trial.$2),
+          desiredAccuracy: trial.item1,
+          timeLimit: Duration(seconds: trial.item2),
         );
       }
     } catch (e) {

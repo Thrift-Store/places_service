@@ -16,7 +16,7 @@ dependencies:
   json_annotation: ^4.8.1
 
   geolocator: ^11.0.0
-  google_maps_webservice_ex: ^0.0.1+2
+  google_places_flutter_api: ^1.0.2
   uuid: ^4.3.3
   tuple: ^2.0.1
 
