@@ -78,8 +78,7 @@ class PlacesService {
             _getShortNameFromComponent(details, 'street_number');
         final streetShort = _getShortNameFromComponent(details, 'route');
         final city = _getShortNameFromComponent(details, 'locality');
-        final state =
-            _getShortNameFromComponent(details, 'administrative_area_level_1');
+        final state = _getLongNameFromComponent(details, 'administrative_area_level_1');
 
         return PlacesDetails(
           placeId: placeId,
